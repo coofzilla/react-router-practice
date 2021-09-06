@@ -19,7 +19,7 @@ export default function Profile() {
   if (!loggedIn) {
     return <Redirect to="/" />;
   }
-  
+
   return (
     <main>
       <h1>{currentUser.username}</h1>

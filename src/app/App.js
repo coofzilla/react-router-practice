@@ -24,8 +24,8 @@ function App() {
         <Route path="/authors/:name" component={Author} />
         <Route path="/categories" component={Categories} />
         <Route path="/profile" component={Profile} />
-        <Footer />
       </Switch>
+      <Footer />
     </Router>
   );
 }
