@@ -12,10 +12,10 @@ import { Link, useLocation } from "react-router-dom";
 export default function Articles() {
   const articles = useSelector(selectArticles);
   const { search } = useLocation();
-  console.log(search);
+
   // grab the search value from useLocation()
   const queryParams = new URLSearchParams(search);
-  console.log(queryParams);
+
   // get the queryParams from new URLSearchParams()
 
   const title = queryParams.get("title"); // <-- fix me!
