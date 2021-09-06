@@ -6,20 +6,22 @@ import {
   selectIsLoggedIn,
 } from "../features/session/sessionSlice";
 import EditProfileForm from "./EditProfileForm";
+import { useRouteMatch } from "react-router-dom";
 
 export default function Profile() {
   const currentUser = useSelector(selectCurrentUser);
   const loggedIn = useSelector(selectIsLoggedIn);
 
   // call useRouteMatch() to get the url and path
+  const { url, path } = useRouteMatch();
 
   // use loggedIn to return a Redirect
 
   return (
     <main>
       <h1>{currentUser.username}</h1>
-      <Link to={"/profile/edit"}>Edit</Link>
-      <Route path="/profile/edit" component={EditProfileForm} />
+      <Link to={`${url}/edit`}>Edit</Link>
+      <Route path={`${path}/edit`} component={EditProfileForm} />
     </main>
   );
 }
